@@ -26,3 +26,4 @@
 4. **竖向排版**: 完美解析 `writing-mode: vertical-rl`，并通过负 Margin 精确实现了“标题高出 2 个字符”的视觉要求。
 5. **适配性**: 采用全屏 `overflow-hidden` 配合绝对定位，确保在手机端不会产生多余滚动，文字自动缩放适配。
 6. **SEO与无障碍**: 于 `<main>` 顶部植入 `sr-only` 隐藏式 H1 标签，收割“九嶷山”、“湖南九嶷山”等大量长尾核心词，并确保视觉排版中的标题降级为 H2，保证 HTML Semantic；图片提供富含搜索词的 alt 属性。
+7. **Cloudflare部署策略**: 因为本站为纯视觉展示向的沉浸式单页，无动态服务端接口，选择在 `next.config.ts` 将 `output` 设置为 `export`，以 `Static HTML Export` 模式部署。这不仅能达到极限性能的 Edge 渲染，还可以免去任何服务器开销。
